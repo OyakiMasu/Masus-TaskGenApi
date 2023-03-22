@@ -1,0 +1,121 @@
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230322102445)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322102445"]]
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-22 10:25:28.889438"], ["updated_at", "2023-03-22 10:25:28.889438"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2023-03-22 13:29:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Test3", "email"=>"mail@moringaschool.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test3", "email"=>"mail@moringaschool.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f45d0c27578>, params: {"username"=>"Test3", "email"=>"mail@moringaschool.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Test3", "email"=>"mail@moringaschool.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Test3"], ["email", "mail@moringaschool.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-22 10:29:58.918090"], ["updated_at", "2023-03-22 10:29:58.918090"]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Test3"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "mail@moringaschool.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 13.9ms | Allocations: 44119)
+
+
+  
+NoMethodError (undefined method `app_response' for #<UsersController:0x000000000087c8>):
+  
+app/controllers/users_controller.rb:6:in `register'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 13:30:44 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Test3", "email"=>"mail@moringaschool.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test3", "email"=>"mail@moringaschool.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x000055b185fbd5b0>, params: {"username"=>"Test3", "email"=>"mail@moringaschool.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Test3", "email"=>"mail@moringaschool.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 2.1ms | Allocations: 7278)
+
+
+  
+NoMethodError (undefined method `app_response' for #<UsersController:0x0000000000bc70>):
+  
+app/controllers/users_controller.rb:8:in `register'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 13:31:10 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Test3", "email"=>"mail@moringaschool.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test3", "email"=>"mail@moringaschool.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f45d0c14b08>, params: {"username"=>"Test3", "email"=>"mail@moringaschool.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Test3", "email"=>"mail@moringaschool.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 272ms (Views: 35.7ms | ActiveRecord: 1.6ms | Allocations: 8668)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-22 13:31:25 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Test3", "email"=>"mail2@moringaschool.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test3", "email"=>"mail2@moringaschool.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f45d0d31388>, params: {"username"=>"Test3", "email"=>"mail2@moringaschool.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Test3", "email"=>"mail2@moringaschool.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail2@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail2@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 251ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 4227)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-22 13:31:34 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Test21", "email"=>"mail2@moringaschool.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test21", "email"=>"mail2@moringaschool.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f45cc013650>, params: {"username"=>"Test21", "email"=>"mail2@moringaschool.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Test21", "email"=>"mail2@moringaschool.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test21"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mail2@moringaschool.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Test21"], ["email", "mail2@moringaschool.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-22 10:31:35.148172"], ["updated_at", "2023-03-22 10:31:35.148172"]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (35.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Test21"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "mail2@moringaschool.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 268ms (Views: 0.4ms | ActiveRecord: 36.5ms | Allocations: 4608)
+
+
