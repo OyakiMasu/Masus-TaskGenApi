@@ -8,6 +8,6 @@ Rails.application.routes.draw do
  
  # TODO ROUTES
  post '/todos', to: 'todos#create'
- 
+ put '/todos/:id', to: 'todos#update'
  
 end
