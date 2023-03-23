@@ -483,3 +483,85 @@ Processing by TodosController#update as */*
 Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 40.2ms | Allocations: 3275)
 
 
+Started DELETE "/todos/1" for 127.0.0.1 at 2023-03-23 13:03:13 +0300
+  
+SyntaxError (/home/student/Masus_Projects/api/app/controllers/todos_controller.rb:24: syntax error, unexpected ';', expecting =>
+...sponse(message: 'succes', data; { info: 'deleted todo succes...
+...                              ^
+/home/student/Masus_Projects/api/app/controllers/todos_controller.rb:24: syntax error, unexpected ',', expecting `end'
+... 'deleted todo successfully' },status: 204)
+...                              ^
+/home/student/Masus_Projects/api/app/controllers/todos_controller.rb:33: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/todos_controller.rb:24: syntax error, unexpected ';', expecting =>
+app/controllers/todos_controller.rb:24: syntax error, unexpected ',', expecting `end'
+app/controllers/todos_controller.rb:33: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/todos_controller.rb:24: syntax error, unexpected ';', expecting =>
+app/controllers/todos_controller.rb:24: syntax error, unexpected ',', expecting `end'
+app/controllers/todos_controller.rb:33: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/todos/1" for 127.0.0.1 at 2023-03-23 13:04:34 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"priority"=>"MEDIUM", "title"=>"Update todos", "id"=>"1", "todo"=>{"title"=>"Update todos", "priority"=>"MEDIUM"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 4], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+  [1m[36mTodo Destroy (0.3ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 204 No Content in 27ms (Views: 0.2ms | ActiveRecord: 9.1ms | Allocations: 7555)
+
+
+Started POST "/todos/create" for 127.0.0.1 at 2023-03-23 13:06:08 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/todos/create"):
+  
+Started POST "/todos" for 127.0.0.1 at 2023-03-23 13:06:21 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Add Todo endpoint", "description"=>"Make sure you add the create todo endpoint", "priority"=>"HIGH", "todo"=>{"title"=>"Add Todo endpoint", "description"=>"Make sure you add the create todo endpoint", "priority"=>"HIGH"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `user'
+[31mUnpermitted parameter: :todo. Context: { controller: TodosController, action: create, request: #<ActionDispatch::Request:0x00007fd574e58e58>, params: {"title"=>"Add Todo endpoint", "description"=>"Make sure you add the create todo endpoint", "priority"=>"HIGH", "controller"=>"todos", "action"=>"create", "todo"=>{"title"=>"Add Todo endpoint", "description"=>"Make sure you add the create todo endpoint", "priority"=>"HIGH"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:5:in `create'
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Add Todo endpoint"], ["description", "Make sure you add the create todo endpoint"], ["status", 0], ["priority", 2], ["user_id", 4], ["created_at", "2023-03-23 10:06:21.027756"], ["updated_at", "2023-03-23 10:06:21.027756"]]
+  ↳ app/controllers/todos_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (34.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:5:in `create'
+Completed 201 Created in 43ms (Views: 0.5ms | ActiveRecord: 34.6ms | Allocations: 3092)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-23 13:06:54 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH", "todo"=>{"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `user'
+[31mUnpermitted parameter: :todo. Context: { controller: TodosController, action: create, request: #<ActionDispatch::Request:0x00007fd55c0ecf98>, params: {"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH", "controller"=>"todos", "action"=>"create", "todo"=>{"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:5:in `create'
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Update Todo endpoint"], ["description", "Make sure you update the  todo endpoint"], ["status", 0], ["priority", 2], ["user_id", 4], ["created_at", "2023-03-23 10:06:54.595678"], ["updated_at", "2023-03-23 10:06:54.595678"]]
+  ↳ app/controllers/todos_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (32.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:5:in `create'
+Completed 201 Created in 41ms (Views: 0.3ms | ActiveRecord: 33.3ms | Allocations: 2976)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-23 13:10:15 +0300
+Processing by TodosController#index as */*
+  Parameters: {"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH", "todo"=>{"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 6.0ms | ActiveRecord: 2.1ms | Allocations: 7144)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-23 13:10:48 +0300
+Processing by UsersController#logout as */*
+  Parameters: {"title"=>"Update Todo endpoint", "description"=>"Make sure you update the  todo endpoint", "priority"=>"HIGH", "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 328)
+
+

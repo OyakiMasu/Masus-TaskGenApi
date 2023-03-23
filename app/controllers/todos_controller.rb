@@ -15,9 +15,19 @@ class TodosController < ApplicationController
         if todo
             app_response(data: { info: 'updated todo successfully' })
         else
-            app_response(message: 'failed', data: { info: 'something went wrong. could not update todo'})
+            app_response(message: 'failed', data: { info: 'something went wrong. could not update todo'}, status: :unprocessable_entity)
         end    
-       end
+    end
+
+    def destroy
+        user.todos.find(params[:id]).destroy
+        app_response(message: 'succes', data: { info: 'deleted todo successfully' },status: 204)
+    end
+
+    def index
+        todos = user.todos.all
+        app_response(message: 'success', data: todos)
+    end
 
     private
 
