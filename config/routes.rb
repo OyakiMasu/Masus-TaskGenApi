@@ -6,5 +6,8 @@ Rails.application.routes.draw do
  delete '/users/logout', to: 'users#logout'
  get '/user/login/check', to: 'users#check_login_status'
  
+ # TODO ROUTES
+ post '/todos', to: 'todos#create'
+ 
  
 end
