@@ -565,3 +565,241 @@ Processing by UsersController#logout as */*
 Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 328)
 
 
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 11:23:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x000055b586396160>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x000055b586396160>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x000055b586396160>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 422 Unprocessable Entity in 298ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 37393)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 11:24:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000563a2abb0048>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000563a2abb0048>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000563a2abb0048>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 422 Unprocessable Entity in 311ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 36956)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 11:35:42 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f1f88adfdf0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f1f88adfdf0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f1f88adfdf0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 200 OK in 263ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 2879)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 11:36:16 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f1f889de2f8>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f1f889de2f8>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f1f889de2f8>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 200 OK in 247ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1461)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 11:40:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#verify_auth as */*
+Completed 422 Unprocessable Entity in 13ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 19360)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 11:41:42 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 125)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 11:42:37 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 125)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 11:42:58 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | Allocations: 386)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:80:in `standard_error'
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 11:46:02 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | Allocations: 387)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:80:in `standard_error'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 11:49:30 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f38c00a97e0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f38c00a97e0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f38c00a97e0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 200 OK in 276ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 17128)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 11:49:43 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 378)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:88:in `standard_error'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 12:00:38 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fe04cbce470>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fe04cbce470>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fe04cbce470>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 200 OK in 301ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 37111)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:00:52 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 120)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:00:55 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 890)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:87:in `standard_error'
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:08:15 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 2ms (Views: 0.2ms | Allocations: 879)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:88:in `standard_error'
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:11:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 16ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 19618)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:88:in `standard_error'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 12:11:09 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000556322c1f298>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000556322c1f298>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000556322c1f298>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 200 OK in 273ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 17139)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:11:25 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 119)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:11:49 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 873)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:88:in `standard_error'
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:13:18 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 2ms (Views: 0.2ms | Allocations: 762)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:88:in `standard_error'
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:15:58 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 2ms (Views: 0.4ms | Allocations: 879)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:90:in `standard_error'
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:17:46 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 204 No Content in 0ms (Allocations: 137)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:18:01 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 204 No Content in 0ms (Allocations: 129)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:18:35 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 119)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:18:44 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | Allocations: 720)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:9:in `app_response'
+app/controllers/application_controller.rb:90:in `standard_error'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-27 12:19:02 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"otsembo", "password"=>"[FILTERED]", "user"=>{"username"=>"otsembo"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a58f976d0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a58f976d0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ( username = 'otsembo' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a58f976d0>, params: {"username"=>"otsembo", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"otsembo"}} }[0m
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 3003)
+
+
+Started GET "/verify" for 127.0.0.1 at 2023-03-27 12:19:10 +0300
+Processing by ApplicationController#verify_auth as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 131)
+
+
